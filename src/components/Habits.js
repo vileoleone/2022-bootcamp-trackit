@@ -8,6 +8,7 @@ export default function Habits() {
 
     if (habitsArray.length == 0) {
         return (
+
             <>
                 <BlankLayout>
                     <Input data-identifier="" required type="text" name="name" placeholder="nome do hábito" />
@@ -27,10 +28,10 @@ export default function Habits() {
                 <HabitLayout>
                     <UpperLayoutConteiner>
                         <p>Ler 1 capítulo de livro</p>
-                        <BsTrash/>
+                        <BsTrash />
                     </UpperLayoutConteiner>
-                    
-                    
+
+
                     <DayOfWeek>
                         {days.map(day => {
                             return (

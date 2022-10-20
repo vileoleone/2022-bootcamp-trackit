@@ -1,9 +1,7 @@
-
 import HeaderBox from "../../components/header";
 import Footer from "../../components/Footer";
-import Habits from "../../components/Habits";
-import  {AddHabit, HabitsOuterContainer, AddIcon} from "./Style"
-export default function HabitsPage() {
+import { HabitsOuterContainer, AddHabit, NoHabitP } from "./styles.js";
+export default function HistoricPage() {
     return (
         <>
             <HeaderBox />
@@ -11,14 +9,11 @@ export default function HabitsPage() {
 
                 <AddHabit>
                     <h2>Meus hábitos</h2>
-                    <AddIcon><p>+</p></AddIcon>
                 </AddHabit>
-
-                <Habits/>
+                <NoHabitP>Em breve você poderá ver o histórico dos seus hábitos aqui!!</NoHabitP>
             </HabitsOuterContainer>
             <Footer />
         </>
     )
 }
-
 

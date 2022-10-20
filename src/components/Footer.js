@@ -8,7 +8,9 @@ export default function Footer() {
                 <p>Hábitos</p>
             </Link>
             <TodayImage src={TrackItTodayLogo} alt="TrackItTodayLogo" />
-            <p>Histórico</p>
+            <Link to = '/Historico'>
+                <p>Histórico</p>            
+            </Link>
         </FooterBox>
     )
 }
