@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import Habits from "../../components/Habits";
 import  {AddHabit, HabitsOuterContainer, AddIcon} from "./Style"
 export default function HabitsPage() {
+
     return (
         <>
             <HeaderBox />

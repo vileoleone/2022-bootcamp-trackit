@@ -1,56 +1,23 @@
-import styled from "styled-components";
-import react from "react";
-import { BsTrash } from 'react-icons/bs';
-export default function Habits() {
-
+import styled from "styled-components"
+export default function BlankHabitCard() {
     const days = ['S', 'T', 'Q', 'Q', 'S', 'S', 'D']
-    const [habitsArray, setHabitsArray] = react.useState([])
+    return (
+        <BlankLayout>
+            <Input data-identifier="" required type="text" name="name" placeholder="nome do hábito" />
+            <DayOfWeek>
+                {days.map(day => {
+                    return (
+                        <Day>{day}</Day>
+                    )
+                })}
+            </DayOfWeek>
+            <ButtonContainer>
+                <CancelButton data-identifier="" type="button" name="Cancelar" value="Cancelar" />
+                <SaveButton data-identifier="" type="button" name="Salvar" value="Salvar" />
+            </ButtonContainer>
+        </BlankLayout>
 
-    if (habitsArray.length == 0) {
-        return (
-
-            <>
-                <BlankLayout>
-                    <Input data-identifier="" required type="text" name="name" placeholder="nome do hábito" />
-                    <DayOfWeek>
-                        {days.map(day => {
-                            return (
-                                <Day>{day}</Day>
-                            )
-                        })}
-                    </DayOfWeek>
-                    <ButtonContainer>
-                        <CancelButton data-identifier="" type="button" name="Cancelar" value="Cancelar" />
-                        <SaveButton data-identifier="" type="button" name="Salvar" value="Salvar" />
-                    </ButtonContainer>
-                </BlankLayout>
-
-                <HabitLayout>
-                    <UpperLayoutConteiner>
-                        <p>Ler 1 capítulo de livro</p>
-                        <BsTrash />
-                    </UpperLayoutConteiner>
-
-
-                    <DayOfWeek>
-                        {days.map(day => {
-                            return (
-                                <Day>{day}</Day>
-                            )
-                        })}
-                    </DayOfWeek>
-                </HabitLayout>
-
-
-
-                <NoHabitP>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</NoHabitP>
-            </>
-        )
-    }
-
-
-
-
+    )
 }
 
 
