@@ -4,12 +4,14 @@ import styled from "styled-components"
 export default function Footer() {
     return (
         <FooterBox>
-            <Link to ='/Hoje'>
+            <Link to='/Habitos'>
                 <p>Hábitos</p>
             </Link>
-            <TodayImage src={TrackItTodayLogo} alt="TrackItTodayLogo" />
-            <Link to = '/Historico'>
-                <p>Histórico</p>            
+            <Link to='/Hoje'>
+                <TodayImage src={TrackItTodayLogo} alt="TrackItTodayLogo" />
+            </Link>
+            <Link to='/Historico'>
+                <p>Histórico</p>
             </Link>
         </FooterBox>
     )

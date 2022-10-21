@@ -20,7 +20,10 @@ export const SubmitButton = styled.button`
     border: 1px solid #D4D4D4;
     border-radius: 5px;
     font-family: Lexend Deca;
-     font-weight: 400;    
+     font-weight: 400;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 `
 
 export const Input = styled.input`

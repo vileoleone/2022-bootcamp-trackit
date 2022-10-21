@@ -1,11 +1,13 @@
 import TrackItSignature from "../assets/images/TrackItSignature.png"
-import loginImage from "../assets/images/loginImage.png"
+import { useContext } from "react"
 import styled from "styled-components"
+import { AuthContext } from "../contexts/Auth"
 export default function Header() {
+    const { user } = useContext(AuthContext)
     return (
         <HeaderBox>
             <Signature src={TrackItSignature} alt="Signature" />
-            <LoginImagebox src={loginImage} alt="loginImage" />
+            <LoginImagebox src={user.image} alt="loginImage" />
         </HeaderBox>
     )
 }
