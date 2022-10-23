@@ -22,7 +22,7 @@ export default function HomePage() {
         setForm({
             ...form, [e.target.name]: e.target.value,
         })
-        console.log(form)
+        
     }
 
     function login(e) {
@@ -52,7 +52,7 @@ export default function HomePage() {
                 setButtonAnimation('Login')
                 setDisabled(false)
                 alert(`Login ou senha inseridos incorretamente`)
-                //console.log(error.response)
+              
 
             }
             )

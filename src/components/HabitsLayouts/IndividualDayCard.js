@@ -6,7 +6,7 @@ export default function IndividualDayCard(props) {
 
 
     return (
-        <Day color={daysArray.includes(index + 1)}>{day}</Day>
+        <Day color={daysArray.includes(index)}>{day}</Day>
 
     )
 }

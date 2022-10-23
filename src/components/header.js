@@ -2,11 +2,14 @@ import TrackItSignature from "../assets/images/TrackItSignature.png"
 import { useContext } from "react"
 import styled from "styled-components"
 import { AuthContext } from "../contexts/Auth"
+import { Link } from "react-router-dom"
 export default function Header() {
     const { user } = useContext(AuthContext)
     return (
         <HeaderBox>
-            <Signature src={TrackItSignature} alt="Signature" />
+            <Link to = "/">
+                <Signature src={TrackItSignature} alt="Signature" />
+            </Link>
             <LoginImagebox src={user.image} alt="loginImage" />
         </HeaderBox>
     )

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState } from "react"
 import styled from "styled-components"
 import { AuthContext } from "../../contexts/Auth"
 import IndividualDay from "./IndividualDay";
@@ -10,7 +10,7 @@ export default function BlankHabitCard(props) {
     const [buttonAnimation, setButtonAnimation] = useState("Salvar")
     const [disabled, setDisabled] = useState(false)
     const { habitsArray, setHabitsArray, user } = useContext(AuthContext)
-    const { setAddHabit, addHabit, habitsAdded, setHabitsAdded } = props
+    const { setAddHabit, habitsAdded, setHabitsAdded } = props
     const config = {
         headers: {
             "Authorization": `Bearer ${user.token}`
@@ -65,15 +65,12 @@ export default function BlankHabitCard(props) {
             />
 
         )
-        console.log(habitsAdded)
         axios.post(`${URL}habits`, habitsArray, config)
 
             .then((resp) => {
                 setButtonAnimation("Salvar")
                 resetBlankCard("success")
                 setDisabled(false)
-
-                console.log(resp.data)
                 const newArray5 = [...habitsAdded, resp.data]
                 setHabitsAdded(newArray5)
                 

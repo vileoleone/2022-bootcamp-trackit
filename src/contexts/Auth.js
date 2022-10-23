@@ -4,14 +4,16 @@ export const AuthContext = createContext({})
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState({})
+    const [resetPage, setResetPage] =useState(false)
     const [habitsArray, setHabitsArray] = useState({
         name: "",
         days: []
     })
+    const [markedNumber, setmarkedNumber] = useState(0)
     
     
     return (
-        <AuthContext.Provider value={{ user, setUser, habitsArray, setHabitsArray }}>
+        <AuthContext.Provider value={{ markedNumber, setmarkedNumber,user, setUser, habitsArray, setHabitsArray, resetPage, setResetPage }}>
             {children}
         </AuthContext.Provider>
     )

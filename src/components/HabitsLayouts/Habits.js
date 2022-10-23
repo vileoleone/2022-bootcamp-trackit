@@ -5,7 +5,6 @@ import { AuthContext } from "../../contexts/Auth";
 import BlankHabitCard from "./BlankHabitCard";
 import HabitsCard from "./HabitsCard";
 import { URL } from "../constants";
-import { config } from "localforage";
 export default function Habits(props) {
     const { addHabit, setAddHabit } = props
 

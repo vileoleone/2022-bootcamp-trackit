@@ -8,7 +8,7 @@ export default function Footer() {
                 <p>Hábitos</p>
             </Link>
             <Link to='/Hoje'>
-                <TodayImage src={TrackItTodayLogo} alt="TrackItTodayLogo" />
+                <TodayImage>Hoje</TodayImage>
             </Link>
             <Link to='/Historico'>
                 <p>Histórico</p>
@@ -34,9 +34,15 @@ const FooterBox = styled.div`
         text-decoration: none;
     }
     `
-const TodayImage = styled.img`
-    width: 91px;
-    height: 91px;
+const TodayImage = styled.div`
+    position: absolute;
+    top: -10px;
+    left: 150px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #52B6FF;
     margin-bottom: 45px;
+    border-radius: 10px;
     box-shadow: inset 10px 10px #FFFFFF;
 `

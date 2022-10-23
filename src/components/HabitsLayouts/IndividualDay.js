@@ -7,15 +7,15 @@ export default function IndividualDay(props) {
 
 
     function handleDay(index) {
-        if (!habitsArray.days.includes(index+1)) {
+        if (!habitsArray.days.includes(index)) {
             const newArray = habitsArray.days
-            newArray.push(index + 1)
+            newArray.push(index)
             setHabitsArray({ ...habitsArray, days: newArray })
  
         }
         else {
 
-            const newArray2 = habitsArray.days.filter(i => i !== index + 1)
+            const newArray2 = habitsArray.days.filter(i => i !== index)
             console.log(newArray2)
             setHabitsArray({ ...habitsArray, days: newArray2 })
 
@@ -24,7 +24,7 @@ export default function IndividualDay(props) {
 
 
     return (
-        <Day color={habitsArray.days.includes(index + 1)} disabled={disabled} onClick={() => { handleDay(index) }}>{day}</Day>
+        <Day color={habitsArray.days.includes(index)} disabled={disabled} onClick={() => { handleDay(index) }}>{day}</Day>
 
     )
 }
