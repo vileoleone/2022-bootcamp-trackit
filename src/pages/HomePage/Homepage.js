@@ -10,7 +10,7 @@ export default function HomePage() {
     const [disabled, setDisabled] = useState(false)
     const navigate = useNavigate()
     const [buttonAnimation, setButtonAnimation] = useState("Entrar")
-    const { user, setUser } = useContext(AuthContext)
+    const { setUser } = useContext(AuthContext)
     const [form, setForm] = useState(
         {
             email: "",
@@ -38,6 +38,7 @@ export default function HomePage() {
             wrapperClassName=""
             visible={true}
         />)
+        
         axios.post(`${URL}auth/login`, form)
             .then((resp) => {
 
@@ -51,7 +52,7 @@ export default function HomePage() {
                 setButtonAnimation('Login')
                 setDisabled(false)
                 alert(`Login ou senha inseridos incorretamente`)
-                console.log(error.response)
+                //console.log(error.response)
 
             }
             )

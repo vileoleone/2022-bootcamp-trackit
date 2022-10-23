@@ -6,12 +6,15 @@ export const HabitsOuterContainer = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
-    width: 100%;
+    min-width: 100%;
     margin-top: 50px;
+    margin-bottom: 70px;
+    min-height: 100vh;
+
+    
     h2{
         color: #126BA5;
         font-size: 25px;
@@ -29,7 +32,7 @@ export const AddHabit = styled.span`
     width: 100%;
 `
 
-export const AddIcon = styled.span`
+export const AddIcon = styled.button`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,6 +42,7 @@ export const AddIcon = styled.span`
     height: 40px;
     border-radius: 5px;
     background-color: #52B6FF;
+    border: none;
 
     p{
         font-size: 26.98px;

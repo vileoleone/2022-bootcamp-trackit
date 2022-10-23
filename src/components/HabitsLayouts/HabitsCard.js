@@ -1,19 +1,49 @@
 import styled from "styled-components"
 import { BsTrash } from 'react-icons/bs';
-export default function HabitsCard() {
-    const days = ['S', 'T', 'Q', 'Q', 'S', 'S', 'D']
+import { days, URL } from "../constants";
+import IndividualDayCard from "./IndividualDayCard";
+import axios from "axios";
+import { AuthContext } from "../../contexts/Auth";
+import { useContext } from "react";
+export default function HabitsCard(props) {
+    const { user } = useContext(AuthContext)
+    const { text, daysArray, id, habitsAdded, setHabitsAdded } = props
+    const config = {
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        }
+    }
+    function deleteHabit() {
+        const del = window.confirm("Por favor confirme a exclusão do hábito")
+        if (del) {
+            axios.delete(`${URL}habits/${id}`, config)
+                .then((resp) => {
+                    console.log("delete com sucesso")
+                    
+                    const newArray5 = habitsAdded.filter((i)=> i.id!== id)
+                    setHabitsAdded(newArray5)
+                   
+
+                }).catch((resp) => {
+                    console.log(resp.data)
+                })
+
+        }
+
+    }
+
     return (
         <HabitLayout>
             <UpperLayoutConteiner>
-                <p>Ler 1 capítulo de livro</p>
-                <BsTrash />
+                <p>{text}</p>
+                <Container onClick={deleteHabit}>
+                    <BsTrash size={20} />
+                </Container>
             </UpperLayoutConteiner>
-
-
             <DayOfWeek>
-                {days.map(day => {
+                {days.map((day, index) => {
                     return (
-                        <Day>{day}</Day>
+                        <IndividualDayCard key={index} index={index} day={day} daysArray={daysArray} ></IndividualDayCard>
                     )
                 })}
             </DayOfWeek>
@@ -29,10 +59,16 @@ const UpperLayoutConteiner = styled.div`
         font-size: 25px;
         margin-top: 10px;
         margin-bottom: 5px;
-        margin-right: 70px;
         font-family: Lexend Deca;
         color: #666666;
         }
+`
+const Container = styled.button`
+   position: absolute;
+   top: 15px;
+   right: 10px;
+   border: none;
+   background-color: inherit;
 `
 
 const HabitLayout = styled.div`
@@ -44,8 +80,10 @@ const HabitLayout = styled.div`
     align-items: flex-start;
     border-radius: 5px;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding-left: 20px;
     box-sizing: border-box;
+    position: relative;
 `
 
 const DayOfWeek = styled.div`
@@ -55,18 +93,4 @@ const DayOfWeek = styled.div`
     display: flex;
     margin-bottom: 40px;
 
-`
-
-const Day = styled.div`
-    width: 30px;
-    height: 30px;
-    color: #DBDBDB;
-    font-size: 20px;
-    border: 1px solid #D4D4D4;
-    border-radius: 5px;
-    font-family: Lexend Deca;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-right: 5px;
 `

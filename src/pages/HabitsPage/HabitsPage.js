@@ -1,9 +1,11 @@
 
 import HeaderBox from "../../components/header";
 import Footer from "../../components/Footer";
-import Habits from "../../components/Habits";
-import  {AddHabit, HabitsOuterContainer, AddIcon} from "./Style"
+import Habits from "../../components/HabitsLayouts/Habits";
+import { AddHabit, HabitsOuterContainer, AddIcon } from "./Style"
+import { useState } from "react";
 export default function HabitsPage() {
+    const [addHabit, setAddHabit] = useState(false)
 
     return (
         <>
@@ -12,10 +14,13 @@ export default function HabitsPage() {
 
                 <AddHabit>
                     <h2>Meus hábitos</h2>
-                    <AddIcon><p>+</p></AddIcon>
+                    <AddIcon onClick={() => {
+                        setAddHabit(!addHabit)
+                        console.log(addHabit)
+                    }}><p>+</p></AddIcon>
                 </AddHabit>
 
-                <Habits/>
+                <Habits addHabit={addHabit} setAddHabit={setAddHabit} />
             </HabitsOuterContainer>
             <Footer />
         </>
