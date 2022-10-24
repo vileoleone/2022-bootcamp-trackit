@@ -35,8 +35,8 @@ export default function HabitsCard(props) {
     return (
         <HabitLayout>
             <UpperLayoutConteiner>
-                <p>{text}</p>
-                <Container onClick={deleteHabit}>
+                <p data-identifier="habit-name">{text}</p>
+                <Container onClick={deleteHabit} data-identifier="delete-habit-btn">
                     <BsTrash size={20} />
                 </Container>
             </UpperLayoutConteiner>

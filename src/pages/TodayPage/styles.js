@@ -16,7 +16,7 @@ color: ${props => (props.markedNumber === 0 || isNaN(props.markedNumber) )? "#BA
 `
 
 export const HabitsOuterContainer = styled.div`
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     background-color: rgb(241,241,241);
     box-sizing: border-box;

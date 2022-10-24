@@ -8,11 +8,11 @@ export default function Footer() {
     const { markedNumber } = useContext(AuthContext)
     return (
         <FooterBox>
-            <Link to='/Habitos' style={{ textDecoration: 'none' }}>
+            <Link data-identifier="habit-page-action" to='/Habitos' style={{ textDecoration: 'none' }}>
                 <p>Hábitos</p>
             </Link>
             <Link to='/Hoje' style={{ textDecoration: 'none' }}>
-                <TodayImage><CircularProgressbar
+                <TodayImage ><CircularProgressbar
                     background={true} value={markedNumber}
                     text={`Hoje`}
                     styles={buildStyles({
@@ -25,7 +25,7 @@ export default function Footer() {
                     })}
                 /></TodayImage>
             </Link>
-            <Link to='/Historico' style={{ textDecoration: 'none' }}>
+            <Link data-identifier="historic-page-action"  to='/Historico' style={{ textDecoration: 'none' }}>
                 <p>Histórico</p>
             </Link>
         </FooterBox>

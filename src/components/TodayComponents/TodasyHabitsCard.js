@@ -47,12 +47,12 @@ export default function TodayHabitsCard(props) {
 
     return (
         < TodayHabitsLayout >
-            <UpperLayoutConteiner>
+            <UpperLayoutConteiner data-identifier="today-infos">
                 <p>{name}</p>
                 <P>Sequência atual: <P2 currentSequence={currentSequence}>{currentSequence} dias</P2></P>
                 <P> Seu recorde: <P3 currentSequence={currentSequence} highestSequence={highestSequence}>{highestSequence} dias</P3></P>
             </UpperLayoutConteiner>
-            <IconContainer isDone={isDone} onClick={() => { makeItDoneOrUndone(id, index) }}>
+            <IconContainer data-identifier="done-habit-btn" isDone={isDone} onClick={() => { makeItDoneOrUndone(id, index) }}>
                 <BsCheckLg color={"white"} size={40} />
             </IconContainer>
         </TodayHabitsLayout>

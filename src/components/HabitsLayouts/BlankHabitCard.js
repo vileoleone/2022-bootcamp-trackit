@@ -87,19 +87,19 @@ export default function BlankHabitCard(props) {
 
     return (
         <BlankLayout>
-            <Input data-identifier="" disabled={disabled} required type="text" name="name" placeholder="nome do hábito" onChange={handleHabit} value={habitsArray.name} />
+            <Input data-identifier="input-habit-name" disabled={disabled} required type="text" name="name" placeholder="nome do hábito" onChange={handleHabit} value={habitsArray.name} />
 
-            <DayOfWeek>
+            <DayOfWeek data-identifier="week-day-btn" >
                 {days.map((day, index) => {
                     return (
-                        <IndividualDay disabled={disabled} key={index} index={index} day={day} ></IndividualDay>
+                        <IndividualDay data-identifier="week-day-btn" disabled={disabled} key={index} index={index} day={day} ></IndividualDay>
                     )
                 })}
             </DayOfWeek>
 
             <ButtonContainer>
-                <CancelButton data-identifier="" disabled={disabled} type="button" name="Cancelar" value="Cancelar" onClick={() => resetBlankCard("")} >Cancelar</CancelButton>
-                <SaveButton data-identifier="" disabled={disabled} type="button" name="Salvar" onClick={postHabit} >{buttonAnimation}</SaveButton>
+                <CancelButton  data-identifier="cancel-habit-create-btn" disabled={disabled} type="button" name="Cancelar" value="Cancelar" onClick={() => resetBlankCard("")} >Cancelar</CancelButton>
+                <SaveButton data-identifier="save-habit-create-btn" disabled={disabled} type="button" name="Salvar" onClick={postHabit} >{buttonAnimation}</SaveButton>
             </ButtonContainer>
         </BlankLayout>
 

@@ -16,7 +16,7 @@ export default function HabitsPage() {
 
                 <AddHabit>
                     <h2>Meus hábitos</h2>
-                    <AddIcon onClick={() => {
+                    <AddIcon data-identifier="create-habit-btn" onClick={() => {
                         setAddHabit(!addHabit)
                     }}><p>+</p></AddIcon>
                 </AddHabit>

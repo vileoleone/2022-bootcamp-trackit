@@ -46,12 +46,12 @@ export default function TodayPage() {
             <>
                 <HeaderBox />
                 <HabitsOuterContainer>
-                    <h2>{today}, {date}/{month}</h2>
-                    <Paragraph markedNumber={markedNumber}>{markedNumber === 0 || isNaN(markedNumber) ? "Nenhum hábito concluído ainda" : `${markedNumber}% dos hábitos concluídos`}</Paragraph>
+                    <h2 data-identifier="today-infos">{today}, {date}/{month}</h2>
+                    <Paragraph data-identifier="today-infos"  markedNumber={markedNumber}>{markedNumber === 0 || isNaN(markedNumber) ? "Nenhum hábito concluído ainda" : `${markedNumber}% dos hábitos concluídos`}</Paragraph>
 
                     {TodayHabits.map((habit, index) => {
                         return (
-                            <TodayHabitsCard index={index} TodayHabits={TodayHabits} setTodayHabits={setTodayHabits} key={index} name={habit.name} done={habit.done} currentSequence={habit.currentSequence} highestSequence={habit.highestSequence} id={habit.id} />
+                            <TodayHabitsCard data-identifier="today-infos" index={index} TodayHabits={TodayHabits} setTodayHabits={setTodayHabits} key={index} name={habit.name} done={habit.done} currentSequence={habit.currentSequence} highestSequence={habit.highestSequence} id={habit.id} />
                         )
 
                     })}

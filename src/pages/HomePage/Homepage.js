@@ -63,12 +63,12 @@ export default function HomePage() {
         <HomePageContainer>
             <img src={Logo} alt="logo" />
             <Form onSubmit={e => login(e)}>
-                <Input data-identifier="" disabled={disabled} required type="email" name="email" placeholder="email" onChange={handleForm} value= {form.email} />
-                <Input data-identifier="" disabled={disabled} required type="password" name="password" placeholder="senha" onChange={handleForm} value= {form.password} />
-                <SubmitButton data-identifier="" disabled={disabled} type="submit" >{buttonAnimation}</SubmitButton>
+                <Input data-identifier="email" disabled={disabled} required type="email" name="email" placeholder="email" onChange={handleForm} value= {form.email} />
+                <Input data-identifier="password" disabled={disabled} required type="password" name="password" placeholder="senha" onChange={handleForm} value= {form.password} />
+                <SubmitButton data-identifier="login-btn" disabled={disabled} type="submit" >{buttonAnimation}</SubmitButton>
             </Form>
             <Link to="/cadastro">
-                <p>Não tem uma conta? Cadastre-se!</p>
+                <p data-identifier="sign-up-action" >Não tem uma conta? Cadastre-se!</p>
             </Link>
         </HomePageContainer>
     )

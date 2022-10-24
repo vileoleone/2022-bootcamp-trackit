@@ -57,14 +57,14 @@ export default function RegistrationPage() {
         <HomePageContainer>
             <img src={Logo} alt="logo" />
             <Form onSubmit  ={Register}>
-                <Input data-identifier="" required disabled = {disabled}  type="email" name="email" placeholder="email" onChange={handleForm} value = {user.email} />
-                <Input data-identifier="" required disabled={disabled} type="password" name="password" placeholder="senha" onChange={handleForm} value={user.password} />
-                <Input data-identifier="" required disabled={disabled} type="text" name="name" placeholder="nome" onChange={handleForm} value={user.name} />
-                <Input data-identifier="" required disabled={disabled} type="url" name="image" placeholder="foto" onChange={handleForm} value={user.image} />
-                <SubmitButton data-identifier="" disabled={disabled} type="submit" >{buttonAnimation}</SubmitButton>
+                <Input data-identifier="email" required disabled = {disabled}  type="email" name="email" placeholder="email" onChange={handleForm} value = {user.email} />
+                <Input data-identifier="password" required disabled={disabled} type="password" name="password" placeholder="senha" onChange={handleForm} value={user.password} />
+                <Input data-identifier="input-name" required disabled={disabled} type="text" name="name" placeholder="nome" onChange={handleForm} value={user.name} />
+                <Input data-identifier="input-photo" required disabled={disabled} type="url" name="image" placeholder="foto" onChange={handleForm} value={user.image} />
+                <SubmitButton disabled={disabled} type="submit" >{buttonAnimation}</SubmitButton>
             </Form>
             <Link to="/">
-                <p>Já tem uma conta? Faça login!</p>
+                <p data-identifier="back-to-login-action">Já tem uma conta? Faça login!</p>
             </Link>
         </HomePageContainer>
     )

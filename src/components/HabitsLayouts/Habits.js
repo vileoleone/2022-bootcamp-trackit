@@ -33,14 +33,14 @@ export default function Habits(props) {
 
         if (!addHabit) {
             return (
-                <NoHabitP>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</NoHabitP>
+                <NoHabitP data-identifier="no-habit-message">Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</NoHabitP>
             )
         }
         return (
             <>
 
                 <BlankHabitCard habitsAdded={habitsAdded} setHabitsAdded={setHabitsAdded} setAddHabit={setAddHabit} addHabit={addHabit} />
-                <NoHabitP>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</NoHabitP>
+                <NoHabitP data-identifier="no-habit-message">Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</NoHabitP>
             </>
 
         )

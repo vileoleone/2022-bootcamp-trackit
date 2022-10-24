@@ -7,10 +7,10 @@ export default function Header() {
     const { user } = useContext(AuthContext)
     return (
         <HeaderBox>
-            <Link to = "/">
+            <Link  to = "/">
                 <Signature src={TrackItSignature} alt="Signature" />
             </Link>
-            <LoginImagebox src={user.image} alt="loginImage" />
+            <LoginImagebox data-identifier="avatar" src={user.image} alt="loginImage" />
         </HeaderBox>
     )
 }

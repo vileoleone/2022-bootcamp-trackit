@@ -24,7 +24,7 @@ export default function IndividualDay(props) {
 
 
     return (
-        <Day color={habitsArray.days.includes(index)} disabled={disabled} onClick={() => { handleDay(index) }}>{day}</Day>
+        <Day   color={habitsArray.days.includes(index)} disabled={disabled} onClick={() => { handleDay(index) }}>{day}</Day>
 
     )
 }
