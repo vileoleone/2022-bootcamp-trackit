@@ -13,6 +13,7 @@ export const HabitsOuterContainer = styled.div`
     margin-top: 50px;
     margin-bottom: 70px;
     min-height: 100vh;
+    padding-bottom: 40px;
 
     
     h2{

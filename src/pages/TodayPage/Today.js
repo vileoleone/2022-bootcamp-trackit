@@ -46,7 +46,6 @@ export default function TodayPage() {
             <>
                 <HeaderBox />
                 <HabitsOuterContainer>
-
                     <h2>{today}, {date}/{month}</h2>
                     <Paragraph markedNumber={markedNumber}>{markedNumber === 0 || isNaN(markedNumber) ? "Nenhum hábito concluído ainda" : `${markedNumber}% dos hábitos concluídos`}</Paragraph>
 

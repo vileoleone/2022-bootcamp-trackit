@@ -16,7 +16,8 @@ color: ${props => (props.markedNumber === 0 || isNaN(props.markedNumber) )? "#BA
 `
 
 export const HabitsOuterContainer = styled.div`
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     background-color: rgb(241,241,241);
     box-sizing: border-box;
     display: flex;
@@ -24,10 +25,10 @@ export const HabitsOuterContainer = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
-    align-items: flex-start;
     min-width: 100%;
     min-height: 100vh;
     margin-bottom: 70px;
+    padding-bottom: 40px;
     h2{
         color: #126BA5;
         font-size: 25px;
@@ -35,8 +36,10 @@ export const HabitsOuterContainer = styled.div`
         font-family: Lexend Deca;
         margin-top: 90px;
         margin-bottom: 0px;
+       
     }
     p{
+       
         font-size: 18px;
         font-weight: 600;
         font-family: Lexend Deca;
@@ -74,13 +77,40 @@ export const UpperLayoutConteiner = styled.div`
     box-sizing: border-box;
 `
 
-export const P2 = styled.h3`
+export const P = styled.h3`
+    display: flex;
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 5px;
     margin-right: 70px;
     font-family: Lexend Deca;
-    color: #666666;
+    font-weight: 400;
+    color: "#666666" ;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    align-items: center;
+`
+export const P2 = styled.h3`
+    display: flex;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 50px;
+    font-family: Lexend Deca;
+    color: ${props => (props.currentSequence > 0) ? "#8FC549" : "#666666"} ;
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+`
+
+export const P3 = styled.h3`
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 70px;
+    font-family: Lexend Deca;
+    color: ${props => (props.currentSequence === props.highestSequence ) ? "#8FC549" : "#666666"} ;
     margin-top: 2px;
     margin-bottom: 2px;
 
